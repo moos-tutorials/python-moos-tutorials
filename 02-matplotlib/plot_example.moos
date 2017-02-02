@@ -1,0 +1,30 @@
+//-------------------------------------------------
+// NAME: M. S. Ibn Seddik, MIT CSAIL
+// FILE: activequeue_pingpong.moos
+//-------------------------------------------------
+
+ServerHost = localhost
+ServerPort = 9003
+Community  = alpha
+
+MOOSTimeWarp = 1
+
+//------------------------------------------
+// Antler configuration  block
+ProcessConfig = ANTLER
+{
+  MSBetweenLaunches = 200
+
+  Run = MOOSDB          @ NewConsole = false
+
+  Run = ./sinewave.py       @ NewConsole = false
+  Run = ./plotter.py        @ NewConsole = false
+}
+
+ProcessConfig = sinewave.py
+{
+}
+
+ProcessConfig = plotter.py
+{
+}
