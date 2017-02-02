@@ -1,0 +1,30 @@
+//-------------------------------------------------
+// NAME: M. S. Ibn Seddik, MIT CSAIL
+// FILE: simple_pingpong.moos
+//-------------------------------------------------
+
+ServerHost = localhost
+ServerPort = 9001
+Community  = alpha
+
+MOOSTimeWarp = 1
+
+//------------------------------------------
+// Antler configuration  block
+ProcessConfig = ANTLER
+{
+  MSBetweenLaunches = 200
+
+  Run = MOOSDB          @ NewConsole = false
+
+  Run = ./ping.py       @ NewConsole = false
+  Run = ./pong.py       @ NewConsole = false
+}
+
+ProcessConfig = ping.py
+{
+}
+
+ProcessConfig = pong.py
+{
+}
