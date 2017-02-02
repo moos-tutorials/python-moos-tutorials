@@ -5,7 +5,7 @@ that are then plotted by `plotter.py` using `matplotlib`.
 
 ## Usage
 ```shell
-pAntler plot_example.py
+pAntler plot_example.moos
 ```
 
 ## Example output
