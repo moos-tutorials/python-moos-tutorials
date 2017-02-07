@@ -1,0 +1,30 @@
+//-------------------------------------------------
+// NAME: M. S. Ibn Seddik, MIT CSAIL
+// FILE: speech_recognition.moos
+//-------------------------------------------------
+
+ServerHost = localhost
+ServerPort = 9000
+Community  = alpha
+
+MOOSTimeWarp = 1
+
+//------------------------------------------
+// Antler configuration  block
+ProcessConfig = ANTLER
+{
+  MSBetweenLaunches = 200
+
+  Run = MOOSDB          @ NewConsole = false
+
+  Run = ./speech_recognition_app.py       @ NewConsole = false
+  Run = ./printer.py       @ NewConsole = false
+}
+
+ProcessConfig = ping.py
+{
+}
+
+ProcessConfig = pong.py
+{
+}
