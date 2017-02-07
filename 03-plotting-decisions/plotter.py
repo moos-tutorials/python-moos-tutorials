@@ -56,18 +56,7 @@ class plotter(pymoos.comms):
     def __on_new_mail(self):
         """OnNewMail callback"""
         for msg in self.fetch():
-            if msg.key() == 'DATA_OK' and msg.string() == 'OK':
-                # using locks to threadsafe plotting
-                self.lock.acquire()
-                try:
-                    ax.relim()
-                    ax.autoscale_view(True, True, True)
-                    plt.autoscale()
-                    plt.draw()
-                finally:
-                    self.lock.release()
-            else:
-                print("Unhandled mail received:", msg.key(), "!")
+            print("Unhandled mail received:", msg.key(), "!")
         return True
 
     def on_nav(self, msg):
