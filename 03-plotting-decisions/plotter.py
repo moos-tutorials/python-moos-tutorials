@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 from pymoos import pymoos
 import time
 import matplotlib.pyplot as plt
